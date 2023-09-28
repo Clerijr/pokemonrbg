@@ -1,3 +1,24 @@
+# About the project
+
+Pokemon RBG stands for Pokemon Random Battle Generator. Its based on pokeapi (https://pokeapi.co/)
+
+The application just throws you on a random battle, with a random pokemon and random moves. 
+
+### TODO
+
+- Game original functionality
+[] Create game page component
+[-] Fetch api data
+[] Implement random battle by api
+
+- Future functionalities
+[] Login user
+[] Integrate twitter
+[] Better animations
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
