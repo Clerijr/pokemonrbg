@@ -6,9 +6,9 @@ let pokemonApi = "https://pokeapi.co/api/v2/pokemon/";
 const Pokedex = function () {
   const [pokemons, setPokemons] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [ pokemonContent, setPokemonContent ] = useState({})
+  const [pokemonContent, setPokemonContent] = useState({});
   const openModal = (pokemon) => {
-    setPokemonContent(pokemon)
+    setPokemonContent(pokemon);
     setModalOpen(true);
   };
 
@@ -55,7 +55,7 @@ const Pokedex = function () {
     <div>
       <div className="flex justify-center flex-row gap-x-4 flex-wrap pokedexContainer">
         {pokemons?.map((pokemon, index) => (
-          <div className="h-50 flex flex-col">
+          <div key={index} className="h-50 flex flex-col">
             <PokemonCard
               key={index}
               pokemon={pokemon}
@@ -63,7 +63,11 @@ const Pokedex = function () {
             />
           </div>
         ))}
-        <PokemonModal isOpen={modalOpen} onClose={closeModal} pokemonContent={pokemonContent}/>
+        <PokemonModal
+          isOpen={modalOpen}
+          onClose={closeModal}
+          pokemon={pokemonContent}
+        />
       </div>
     </div>
   );
