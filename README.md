@@ -1,3 +1,7 @@
+# Current website
+
+https://pokemonrbg-9v0kf22j5-clerijr.vercel.app/
+
 # About the project
 
 Pokemon RBG stands for Pokemon Random Battle Generator. Its based on pokeapi (https://pokeapi.co/)
