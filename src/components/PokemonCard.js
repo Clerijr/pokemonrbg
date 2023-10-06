@@ -1,5 +1,4 @@
 import capitalize from "../helpers/capitalize";
-
 const typeColors = {
   normal: "text-gray-200 bg-normal",
   fire: "text-gray-200 bg-fire",
@@ -20,22 +19,23 @@ const typeColors = {
   steel: "text-gray-100 bg-steel",
   fairy: "text-gray-200 bg-fairy",
 };
-export default function PokemonContainer(props) {
+export default function PokemonCard({ pokemon, onClick }) {
   return (
     <div
-      key={props.pokemon.pkmnID}
-      className={`flex flex-col col-span-1 w-48 card card-compact pt-6 m-2 drop-shadow-2xl bg-opacity-60 hover:bg-opacity-100 ${
-        typeColors[props.pokemon.types[0]]
-      } `}
+      key={pokemon.pkmnID}
+      className={`h-full flex flex-col col-span-1 w-48 card card-compact pt-6 m-2 drop-shadow-2xl bg-opacity-60 hover:bg-opacity-100 ${
+        typeColors[pokemon.types[0]]
+      }`}
+      onClick={onClick}
     >
       <figure className="h-full scale-125">
-        <img src={props.pokemon.image} alt={capitalize(props.pokemon.name)} />
+        <img src={pokemon.image} alt={capitalize(pokemon.name)} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{capitalize(props.pokemon.name)}</h2>
-        <h3 className="font-bold">#{props.pokemon.pkmnID}</h3>
+        <h2 className="card-title">{capitalize(pokemon.name)}</h2>
+        <h3 className="font-bold">#{pokemon.pkmnID}</h3>
         <div className="card-actions justify-end">
-          {props.pokemon.types.map((type) => (
+          {pokemon.types.map((type) => (
             <div
               key={type}
               className={`badge badge-lg font-bold p-3 ${typeColors[type]}`}
